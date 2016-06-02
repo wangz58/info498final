@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class TypeViewController: UIViewController {
 
@@ -14,14 +15,35 @@ class TypeViewController: UIViewController {
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var result: UILabel!
     @IBOutlet weak var userInput: UITextField!
+    var backgroundMusicPlayer = AVAudioPlayer()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         text.text = "Please type the exact same thing!"
         self.randomText.text = randomText(40, justLowerCase: false)
+        playBackgroundMusic("longalarm.mp3")
         
     }
+    
+    func playBackgroundMusic(filename: String) {
+        let url = NSBundle.mainBundle().URLForResource(filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOfURL: newURL)
+            backgroundMusicPlayer.numberOfLoops = -1
+            backgroundMusicPlayer.prepareToPlay()
+            backgroundMusicPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+    
+
     
     func randomText(length: Int, justLowerCase: Bool = false) -> String {
         var text = ""
@@ -56,7 +78,6 @@ class TypeViewController: UIViewController {
     @IBAction func donePressed(sender: AnyObject) {
         if (userInput.text!.isEqual(randomText.text)){
             result.text = "Well done!"
-            
         } else {
             result.text = "WROOOOONG!"
         }
