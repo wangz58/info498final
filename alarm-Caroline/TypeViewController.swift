@@ -23,7 +23,7 @@ class TypeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         text.text = "Please type the exact same thing!"
         self.randomText.text = randomText(40, justLowerCase: false)
-        playBackgroundMusic("longalarm.mp3")
+        playBackgroundMusic("loud_alarm.caf")
         
     }
     
