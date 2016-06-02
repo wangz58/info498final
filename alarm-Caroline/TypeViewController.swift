@@ -56,6 +56,7 @@ class TypeViewController: UIViewController {
     @IBAction func donePressed(sender: AnyObject) {
         if (userInput.text!.isEqual(randomText.text)){
             result.text = "Well done!"
+            
         } else {
             result.text = "WROOOOONG!"
         }
