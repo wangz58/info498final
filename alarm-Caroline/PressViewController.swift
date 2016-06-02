@@ -23,7 +23,7 @@ class PressViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         random = Int(arc4random_uniform(20)) + 40
         text.text = "Please press the button for \(random) times!"
-        playBackgroundMusic("longalarm.mp3")
+        playBackgroundMusic("loud_alarm.caf")
     }
     
     func playBackgroundMusic(filename: String) {
