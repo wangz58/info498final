@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vNi-NB-feH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7cF-3M-aVU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="0gS-OQ-yMX">
-            <objects>
-                <navigationController id="vNi-NB-feH" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WC1-mi-Yyq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CqC-qC-JYg"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m3S-n8-Uj7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1786" y="59"/>
-        </scene>
         <!--Add View Controller-->
         <scene sceneID="fOt-GG-hAS">
             <objects>
-                <viewController storyboardIdentifier="Add" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uai-4j-IaC" customClass="AddViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Add" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Uai-4j-IaC" customClass="AddViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yuu-rm-9SE"/>
                         <viewControllerLayoutGuide type="bottom" id="9ji-dE-DLg"/>
@@ -101,7 +85,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="7FO-NH-fw7">
             <objects>
-                <viewController storyboardIdentifier="quiz" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lhp-Q8-3gQ" customClass="QuizViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="quiz" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Lhp-Q8-3gQ" customClass="QuizViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kr8-nk-X0A"/>
                         <viewControllerLayoutGuide type="bottom" id="kyT-nc-D8Z"/>
@@ -114,8 +98,8 @@
                                 <rect key="frame" x="0.0" y="50" width="600" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TGP-iV-IJr" userLabel="cell" customClass="CustomizeCell" customModule="alarm_Caroline" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TGP-iV-IJr" userLabel="cell" customClass="CustomizeCell" customModule="TickTock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TGP-iV-IJr" id="Zlv-pZ-H12">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -176,15 +160,18 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="gZq-xf-omU"/>
+                    <connections>
+                        <outlet property="tableView" destination="Wkf-j1-erY" id="7w9-0S-ESE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeA-eT-Eii" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="-751"/>
+            <point key="canvasLocation" x="1620" y="-751"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Root_View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AlarmViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Root_View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="AlarmViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -194,10 +181,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tvg-TK-6XB">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Alarmcell" textLabel="q6m-JG-HT2" detailTextLabel="U00-X0-4wU" rowHeight="77" style="IBUITableViewCellStyleSubtitle" id="Mi3-wS-fMn" customClass="Alarmcell" customModule="alarm_Caroline" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Alarmcell" textLabel="q6m-JG-HT2" detailTextLabel="U00-X0-4wU" rowHeight="77" style="IBUITableViewCellStyleSubtitle" id="Mi3-wS-fMn" customClass="Alarmcell" customModule="TickTock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mi3-wS-fMn" id="4Em-w4-qzx">
@@ -253,7 +240,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Rmy-HJ-O5X" secondAttribute="trailing" constant="-20" id="5E5-RJ-H5I"/>
+                            <constraint firstItem="Rmy-HJ-O5X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4yE-pJ-Sbj"/>
+                            <constraint firstItem="Rmy-HJ-O5X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="drv-Tq-qv1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nNy-Ud-36c"/>
@@ -264,12 +252,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-957" y="59"/>
+            <point key="canvasLocation" x="-145" y="59"/>
         </scene>
         <!--DescViewController-->
         <scene sceneID="cLp-Of-amH">
             <objects>
-                <viewController id="AXg-Re-efO" userLabel="DescViewController" customClass="DescViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AXg-Re-efO" userLabel="DescViewController" customClass="DescViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Z3-qW-tgc"/>
                         <viewControllerLayoutGuide type="bottom" id="zLD-Z6-9pI"/>
@@ -303,11 +291,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Back" id="IfP-DO-yfH">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="OO3-Ec-MHy">
-                            <connections>
-                                <segue destination="Lhp-Q8-3gQ" kind="show" id="6ea-wB-VpU"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="OO3-Ec-MHy"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zts-ca-F7P" userLabel="Next">
                             <connections>
                                 <segue destination="aWu-Ne-yZn" kind="show" identifier="showQuestion" id="U05-5s-nfW"/>
@@ -321,12 +305,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgn-6O-SOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="-751"/>
+            <point key="canvasLocation" x="2361" y="-751"/>
         </scene>
         <!--Title-->
         <scene sceneID="fTD-Wj-B2b">
             <objects>
-                <viewController id="aWu-Ne-yZn" customClass="QuestionViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aWu-Ne-yZn" customClass="QuestionViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mpt-jR-fvj"/>
                         <viewControllerLayoutGuide type="bottom" id="oHC-FV-8me"/>
@@ -421,12 +405,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8H-6c-0zB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1447" y="-735"/>
+            <point key="canvasLocation" x="3071" y="-735"/>
         </scene>
         <!--Press View Controller-->
         <scene sceneID="juL-kD-sNR">
             <objects>
-                <viewController storyboardIdentifier="press" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8j0-1c-Efz" customClass="PressViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="press" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8j0-1c-Efz" customClass="PressViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bu1-we-IcO"/>
                         <viewControllerLayoutGuide type="bottom" id="T8I-RN-x6b"/>
@@ -462,12 +446,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPV-Zy-Bam" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-17" y="43"/>
+            <point key="canvasLocation" x="795" y="43"/>
         </scene>
         <!--Type View Controller-->
         <scene sceneID="Aff-SE-fia">
             <objects>
-                <viewController storyboardIdentifier="type" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ct8-Cv-Rhb" customClass="TypeViewController" customModule="alarm_Caroline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="type" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ct8-Cv-Rhb" customClass="TypeViewController" customModule="TickTock" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oHG-RO-HT3"/>
                         <viewControllerLayoutGuide type="bottom" id="gtW-kz-UTv"/>
@@ -532,6 +516,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ad2-nD-fZG" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4" y="839"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ev-qo-I9R">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7cF-3M-aVU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TgM-E4-Vaa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CeI-Tn-CXT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Hg-xJ-mNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-957" y="59"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P9r-db-8JP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibO-mO-gWR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ejn-Ld-aAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lhp-Q8-3gQ" kind="relationship" relationship="rootViewController" id="5Zq-Ez-J6L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xik-fD-8qG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="808" y="-751"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

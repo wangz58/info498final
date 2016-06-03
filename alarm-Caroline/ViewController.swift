@@ -10,7 +10,7 @@ import UIKit
 
 class AlarmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    var alarmList : [Alarm] = [Alarm(UUID: "zqazqaz", wakeTime: NSDate()), Alarm(UUID: "shshshs", wakeTime: NSDate()), Alarm(UUID: "aaahhh", wakeTime: NSDate())];
+    var alarmList : [Alarm] = [];
     
     
     override func viewDidLoad() {

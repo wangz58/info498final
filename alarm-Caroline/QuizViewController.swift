@@ -10,11 +10,11 @@ import AVFoundation
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class QuizViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    var TopicArray : [Topic] = []
 
     @IBOutlet weak var tableView: UITableView!
-    var TopicArray = [Topic]()
-
     
     
     var backgroundMusicPlayer = AVAudioPlayer()
@@ -38,8 +38,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
           super.viewDidLoad()
-        tableView.estimatedRowHeight = 68.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 68.0
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        self.tableView.dataSource = self;
+//        self.tableView.delegate = self;
         retrieveOffline()
         playBackgroundMusic("loud_alarm.caf")
         // Do any additional setup after loading the view, typically from a nib.
@@ -75,6 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
                 let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                 if let tpArray = (json as? NSArray){
+                    print(tpArray)
                     for tp in tpArray{
                         let title = tp["title"] as! String
                         let descr = tp["desc"] as! String
@@ -102,7 +105,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             print("Invalid filename/path.")
         }
-        self.tableView.reloadData()
+        self.tableView!.reloadData()
     }
     
     // use segue tafser data between different view controller
